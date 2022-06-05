@@ -1,0 +1,27 @@
+#logo{
+   margin: 0%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+ul{ 
+    overflow:hidden;
+        
+    margin: 0%;
+    text-align: right;
+}
+a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+li{
+    display:inline-block;
+    margin: 2px;
+    }

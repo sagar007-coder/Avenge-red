@@ -1,18 +1,25 @@
 <html>
 
 <head>
-    <title>
+    <title style="margin:0 ;">
         <%= title %>
     </title>
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
     <%- style%>
 </head>
    
 <body>
+    <div id="header">
     <%- include('_header'); %> 
+</div>
+ <main id="main-body">
     <%- body%>
+</main>
+<div id="footer">
     <%- include('_footer'); %> 
-
+</div>
     <%- script%>
 </body>
 </html>
