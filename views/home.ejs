@@ -1,8 +1,30 @@
-<div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-<div class="content">
+
     <h1> Codeial : HOME PAGE / <%= title %></h1> 
 </div>
+
+<section id="feed-post">
+     <h4>Posts</h4>
+     <form action="/posts/create" id="new-post-form" method="post">
+        <textarea name="content" id="" cols="30" rows="3" placeholder="type here"></textarea>
+        <input type="submit" value="Post">
+
+     </form>
+
+     <div id="posts-list-container">
+         <ul style="text-align:center;" >
+             <% for(post of posts){ %>
+                <li style=" display:block;">
+                    <p>
+                    <%= post.content %>
+                    <br>
+                    <small>
+                        <%= post.user %>
+                    </small></p>
+                </li>
+                <%} %>
+         </ul>
+     </div>
+
+ </section>
     
     
