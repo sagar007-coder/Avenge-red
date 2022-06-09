@@ -26,15 +26,20 @@ body{
     background-color: whitesmoke;
     text-align: center;
     height: 100%;
+    position: relative;
 }
 h1{
     margin: 0%;
 }
 
 #footer{
+    margin-bottom: 0;
     background-color: rgb(4, 4, 4);
     text-align: center;
     color: wheat;
-    margin: 0%; 
-    height: 10%; 
+    position: relative;
+    width: 100%;
+    padding: 10px;
+
+
 }
