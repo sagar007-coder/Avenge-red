@@ -1,6 +1,6 @@
 <li style="display: block;    text-align: center;">    
-    <p>
-        <% if (locals.user && locals.user.id == comment.user.id){ %>
+    <p> 
+        <% if ((locals.user )&& (locals.user.id == comment.user._id)){ %>
         <small>
             <a href="/comments/destroy/<%= comment.id %>">Delete</a>
         </small>
