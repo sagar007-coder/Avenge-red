@@ -42,6 +42,10 @@ module.exports.signIn = function(req, res){
     if (req.isAuthenticated()){
         return res.redirect('/users/profile');
     }
+// else{
+// req.flash('error', 'Invalid password');
+// return res.redirect('back');
+// }
     return res.render('user_sign_in', {
         title: "Codeial | Sign In"
     })
@@ -72,12 +76,19 @@ module.exports.create = function(req, res){
 
 // sign in and create a session for the user
 module.exports.createSession = function(req, res){
+    if(!req.isAuthenticated()){
+        req.flash('error', 'Invalid password');
+        return res.redirect('back');
+    }
+    req.flash('success', 'Logged in Successfully');
     return res.redirect('/');
 }
 
 module.exports.destroySession = function(req, res){
     req.logout(function(err) {
-        if (err) { return next(err); }
+        if (err) { 
+            return next(err); }
+        req.flash('success', 'Logged out Successfully');
         res.redirect('/');
       });
 }
