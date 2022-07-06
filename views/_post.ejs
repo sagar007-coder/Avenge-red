@@ -1,8 +1,8 @@
-<li style="display: block;    text-align: center;">  
+<li  id="post-<%= post._id %>"style="display: block;    text-align: center;">  
     <p>
         <% if (locals.user && locals.user.id == post.user.id){ %>
         <small>
-            <a href="/posts/destroy/<%= post.id %>">del</a>
+            <a class="delete-post-button" href="/posts/destroy/<%= post.id %>">del</a>
         </small>
         <% } %>
         <%= post.content %>
