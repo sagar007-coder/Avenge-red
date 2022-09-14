@@ -28,7 +28,20 @@
         </p>
        <% } %>
     </section>
+    <%- include('_chat_box')-%>
 
 </div>
 <script src="/js/home_posts.js"></script>
 
+<!--import the script file for toggle likes , aslo run it over for the already present posts and comments on the page-->
+<script>
+    $('.toggle-like-button').each(function(){
+        let self = this;
+        let toggleLike = new ToggleLike(self);
+    })
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js" integrity="sha512-VJ6+sp2E5rFQk05caiXXzQd1wBABpjEj1r5kMiLmGAAgwPItw1YpqsCCBtq8Yr1x6C49/mTpRdXtq8O2RcZhlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="/js/chat_engine.js"></script>
+<script >
+    new ChatEngine('user-chat-box','<%= locals.user._id=%>')
+</script>
