@@ -45,5 +45,10 @@ module.exports.chatSockets = function (socketServer) {
   
         io.in(data.chatroom).emit("user_joined", data);
       });
+
+      //detect send mesz andd broadcast to everyone in the room
+      socket.on('send-message', function(data){
+        io.in(data.chatroom).emit('receive_message',data);
+      });
     });
 };  
