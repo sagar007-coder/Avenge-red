@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Like = require('../models/like');
 const Post = require('../models/post');
 const Comment = require('../models/comments');
@@ -6,6 +7,9 @@ const { transformFunctionListItemReply } = require('@redis/client/dist/lib/comma
 
 module.exports.toggleLike = async function(req, res){
     try{
+        console.log("inside like",req.query.id);
+        //req.query.id = mongoose.Types.ObjectId(req.query.id);
+        
 
         //likes/toggle/?id=abcf&type=post
         let likeable;
